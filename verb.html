@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verbos em Inglês</title>
+  <style>
+    :root{
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-2: #0b1220;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2:#22d3ee;
+      --ring: 0 0 0 1px rgba(56,189,248,.2), 0 10px 30px -10px rgba(56,189,248,.25);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family: system-ui, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,.15), transparent 60%),
+        radial-gradient(1000px 600px at 90% 0%, rgba(34,211,238,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg), #060b16 40%, #050a14 100%);
+      background-attachment: fixed;
+      color: var(--text);
+      padding: 80px 20px 40px;
+    }
+    /* NAVIGATION BAR LATERAL */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 100%;
+      width: 240px;
+      background: transparent;
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 16px;
+    }
+    .nav-logo {
+      font-weight: bold;
+      font-size: 20px;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 24px;
+      display: block;
+      text-align: center;
+    }
+    .nav-logo:hover { color: var(--accent-2); }
+    .nav-links { display:flex; flex-direction: column; gap: 14px; }
+    .nav-links a {
+      color: var(--text); text-decoration:none; font-size:15px; font-weight:500;
+      padding: 8px 12px; border-radius: 8px; transition: background 0.2s, color 0.2s;
+    }
+    .nav-links a:hover {
+      background: rgba(56,189,248,.08);
+      color: var(--accent-2);
+    }
+    @media(max-width:768px){
+      .navbar{
+        height:auto; width:100%; flex-direction:row; justify-content:space-between; align-items:center; padding:12px 20px;
+        border-bottom:1px solid rgba(148,163,184,.12);
+      }
+      .nav-links{flex-direction:row; gap:12px; flex-wrap:wrap;}
+      body{margin-top:70px;}
+    }
+    main{max-width:1000px; margin-left:270px;}
+    h1{text-align:center; font-size:clamp(28px,5vw,42px); background:linear-gradient(90deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; color:transparent; margin-bottom:10px;}
+    p.subtitle{text-align:center; color:var(--muted); margin-bottom:30px;}
+    .cards{display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:20px; max-width:900px; margin:0 auto 30px;}
+    .card{
+      background: linear-gradient(180deg, var(--panel-2), rgba(15,23,42,.7));
+      border: 1px solid rgba(148,163,184,.12);
+      border-radius:12px;
+      padding:20px;
+      text-align:center;
+      box-shadow: var(--ring);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 0 0 1px rgba(34,211,238,.3), 0 15px 35px -10px rgba(34,211,238,.4);
+    }
+    .card span{font-size:20px; font-weight:bold; color:var(--accent);}
+    .card small{display:block; color:var(--muted); margin-top:6px;}
+    @media (max-width:700px){body{padding:100px 12px 40px}}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">🏠 Home</a>
+      <div class="nav-links">
+        <a href="alphabet.html">Alphabet</a>
+        <a href="numbers.html">Numbers</a>
+        <a href="auxiliary-modals.html">Auxiliary & Modals</a>
+        <a href="year-division.html">Year Division</a>
+        <a href="prepositions.html">Prepositions</a>
+        <a href="verb.html">Verb</a>
+        <a href="very-much-many.html">Very / Much / Many</a>
+        <a href="punctuation-accents.html">Punctuation & Accents</a>
+        <a href="social.html">Greetings</a>
+        <a href="dictionary.html">Dictionary</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Verbos em Inglês</h1>
+    <p class="subtitle">Escolha um verbo para ver formas, usos e exemplos.</p>
+
+    <section class="cards" aria-label="Lista de verbos">
+      <div class="card">
+        <span>To Be</span>
+        <small>Verbo essencial: ser / estar</small>
+        <small class="example"><a href="verbos/to-be.html" style="color:var(--accent)">Abrir →</a></small>
+      </div>
+      <div class="card">
+        <span>To Have</span>
+        <small>Ter / Possuir</small>
+        <small class="example"><a href="verbos/to-have.html" style="color:var(--accent)">Abrir →</a></small>
+      </div>
+      <div class="card">
+        <span>To Do</span>
+        <small>Fazer</small>
+        <small class="example"><a href="verbos/to-do.html" style="color:var(--accent)">Abrir →</a></small>
+      </div>
+      <div class="card">
+        <span>To Go</span>
+        <small>Ir</small>
+        <small class="example"><a href="verbos/to-go.html" style="color:var(--accent)">Abrir →</a></small>
+      </div>
+      <div class="card">
+        <span>To Make</span>
+        <small>Fazer / Criar</small>
+        <small class="example"><a href="verbos/to-make.html" style="color:var(--accent)">Abrir →</a></small>
+      </div>
+      <!-- Adicione mais verbos conforme necessário -->
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auxiliares e Modais em Inglês — Explicação</title>
+  <style>
+    :root{
+      --bg: #0f172a;          /* slate-900 */
+      --panel: #111827;       /* gray-900 */
+      --panel-2: #0b1220;     /* deep */
+      --text: #e5e7eb;        /* gray-200 */
+      --muted: #94a3b8;       /* slate-400 */
+      --accent: #38bdf8;      /* sky-400 */
+      --accent-2:#22d3ee;     /* cyan-400 */
+      --code-bg:#0b1220;
+      --ok:#22c55e;           /* green-500 */
+      --no:#ef4444;           /* red-500 */
+      --warning:#f59e0b;      /* amber-500 */
+      --card:#0b1220;
+      --card-b:#1f2937;       /* gray-800 */
+      --ring: 0 0 0 1px rgba(56,189,248,.2), 0 10px 30px -10px rgba(56,189,248,.25);
+    }
+    * { box-sizing: border-box }
+    html, body { height: 100% }
+    body{
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,.15), transparent 60%),
+        radial-gradient(1000px 600px at 90% 0%, rgba(34,211,238,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg), #060b16 40%, #050a14 100%);
+      background-attachment: fixed; /* 🔹 Fundo fixo */
+      margin: 0;
+      padding: 70px 20px 80px;
+      
+    }
+
+  /* ==========================
+   NAVIGATION BAR LATERAL
+   ========================== */
+
+
+/* Nav lateral fixa */
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%;
+  width: 240px;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+}
+/* Logo */
+.nav-logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 24px;
+  display: block;
+  text-align: center;
+}
+.nav-logo:hover {
+  color: var(--accent2);
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(56,189,248,.08);
+  color: var(--accent2);
+}
+
+
+/* Responsivo: nav vira topo no mobile */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(148,163,184,.12);
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  body {
+    margin-left: 0;
+    margin-top: 70px; /* espaço para a nav no topo */
+  }
+}
+    .wrap{
+      max-width: 1000px;
+      margin-left: 270px;
+    }
+    header{
+      margin-bottom: 24px;
+      display: grid;
+      gap: 6px;
+      text-align: center;
+    }
+    h1{
+      margin: 0;
+      font-size: clamp(28px, 5vw, 42px);
+      line-height: 1.1;
+      letter-spacing: .3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+    .subtitle{
+      margin: 0 auto;
+      max-width: 70ch;
+      color: var(--muted);
+      font-size: clamp(14px, 1.6vw, 16px);
+    }
+
+    .grid{
+      display: block;
+      gap: 18px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 900px){
+      .grid{
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card{
+      background: linear-gradient(180deg, var(--card), rgba(11, 18, 32, 0.952));
+      border: 1px solid rgba(148,163,184,.12);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: var(--ring);
+    }
+    .card h2{
+      margin: 0 0 8px;
+      font-size: 22px;
+      letter-spacing:.2px;
+    }
+    .badge{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      font-size: 12px;
+      color: var(--text);
+      background: rgba(56,189,248,.12);
+      border: 1px solid rgba(56,189,248,.35);
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .lead{
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    ul, ol{ margin: 0 0 12px 22px; }
+    li + li{ margin-top: 4px; }
+    .examples{
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .ex{
+      background: linear-gradient(180deg, var(--panel-2), rgba(15,23,42,.7));
+      border: 1px solid rgba(148,163,184,.12);
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .ex strong{ color: var(--accent); }
+    code, kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background: var(--code-bg);
+      border: 1px solid rgba(148,163,184,.16);
+      padding: .15rem .4rem;
+      border-radius: 8px;
+      font-size: .95em;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .flag { font-weight: 600; letter-spacing:.2px }
+    .ok { color: var(--ok) }
+    .no { color: var(--no) }
+    .tip{
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-left: 3px solid var(--warning);
+      background: linear-gradient(180deg, rgba(245,158,11,.08), transparent);
+      border-radius: 8px;
+      color: var(--text);
+    }
+
+    .footer{
+      margin-top: 26px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">🏠 Home</a>
+    <div class="nav-links">
+      <a href="alphabet.html">Alphabet</a>
+      <a href="numbers.html">Numbers</a>
+      <a href="auxiliary-modals.html">Auxiliary & Modals</a>
+      <a href="year-division.html">Year Division</a>
+      <a href="prepositions.html">Prepositions</a>
+      <a href="verb.html">Verb</a>
+      <a href="very-much-many.html">Very / Much / Many</a>
+      <a href="punctuation-accents.html">Punctuation & Accents</a>
+      <a href="social.html">Greetings</a>
+      <a href="dictionary.html">Dictionary</a>
+    </div>
+  </div>
+</nav>
+  <main class="wrap">
+    <header>
+      <h1>Verbos Auxiliares e Modais em Inglês</h1>
+      <p class="subtitle">Resumo visual e exemplos práticos — pronto para estudo rápido.</p>
+    </header>
+
+    <section class="grid">
+      <!-- AUXILIARES -->
+      <article class="card"  style="margin-bottom: 40px;">
+        <span class="badge">1. Verbos Auxiliares (Auxiliary Verbs)</span>
+        <h2>O que são</h2>
+        <p class="lead">
+          São verbos que ajudam (daí o nome “auxiliares”) o verbo principal a formar diferentes tempos verbais, perguntas,
+          negações e vozes verbais (ativa/passiva). Eles não carregam muito sentido próprio — o papel deles é mais
+          gramatical do que de significado.
+        </p>
+
+        <h3>Principais auxiliares:</h3>
+        <ul>
+          <li>
+            <span class="flag"><strong>be</strong></span> → usado para formar tempos contínuos
+            (<code>I am studying</code>) e voz passiva (<code>The cake was eaten</code>).
+          </li>
+          <li>
+            <span class="flag"><strong>have</strong></span> → usado para formar tempos perfeitos
+            (<code>I have finished</code>).
+          </li>
+          <li>
+            <span class="flag"><strong>do</strong></span> → usado para formar perguntas
+            (<code>Do you like pizza?</code>), negações (<code>I don’t know</code>), e dar ênfase
+            (<code>I do like it</code>).
+          </li>
+        </ul>
+
+        <h3>Exemplos:</h3>
+        <div class="examples">
+          <div class="ex">
+            <strong>I am reading a book.</strong>
+            <div>→ (<code>am</code> = auxiliar, <code>reading</code> = verbo principal)</div>
+          </div>
+          <div class="ex">
+            <strong>She has worked here for five years.</strong>
+            <div>→ (<code>has</code> = auxiliar)</div>
+          </div>
+          <div class="ex">
+            <strong>Do you play guitar?</strong>
+            <div>→ (<code>do</code> = auxiliar para pergunta)</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MODAIS -->
+      <article class="card">
+        <span class="badge">2. Verbos Modais (Modal Verbs)</span>
+        <h2>O que são</h2>
+        <p class="lead">
+          São um tipo especial de auxiliar que expressa possibilidade, capacidade, permissão, obrigação, probabilidade ou necessidade.
+          Diferente dos auxiliares comuns, eles têm significado próprio e mudam o sentido da frase.
+        </p>
+
+        <h3>Principais modais:</h3>
+        <ul>
+          <li><strong>can</strong> → poder, ser capaz</li>
+          <li><strong>could</strong> → poderia</li>
+          <li><strong>may</strong> → pode ser que, permissão</li>
+          <li><strong>might</strong> → talvez</li>
+          <li><strong>must</strong> → deve, obrigação</li>
+          <li><strong>shall</strong> → dever (formal), futuro (britânico)</li>
+          <li><strong>should</strong> → deveria</li>
+          <li><strong>will</strong> → futuro</li>
+          <li><strong>would</strong> → iria</li>
+        </ul>
+
+        <h3>Características importantes:</h3>
+        <ul>
+          <li>
+            <strong>Não mudam de forma</strong> (não têm <code>-s</code>, não vão para o passado com <code>-ed</code>, etc.)
+            <div class="examples" style="margin-top:6px">
+              <div class="ex"><span class="no">Errado ❌</span>: <code>He cans swim.</code></div>
+              <div class="ex"><span class="ok">Certo ✅</span>: <code>He can swim.</code></div>
+            </div>
+          </li>
+          <li>
+            <strong>Sempre seguidos do verbo principal no infinitivo sem “to”</strong>
+            <div class="examples" style="margin-top:6px">
+              <div class="ex"><code>She can sing.</code></div>
+              <div class="ex"><code>I must go.</code></div>
+            </div>
+          </li>
+          <li>
+            <strong>O mesmo modal pode indicar tempos diferentes dependendo do contexto</strong>
+            <div class="examples" style="margin-top:6px">
+              <div class="ex"><code>Can</code> (presente/futuro) → <code>I can run fast.</code></div>
+              <div class="ex"><code>Could</code> (passado ou possibilidade) → <code>I could run fast when I was younger.</code></div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="tip">
+          <strong>Resumo rápido da diferença:</strong><br />
+          <em>Auxiliares comuns</em>: ajudam a formar a estrutura gramatical (perguntas, negações, tempos verbais).
+          Ex.: <code>be</code>, <code>have</code>, <code>do</code>.<br />
+          <em>Modais</em>: também são auxiliares, mas dão significado adicional como obrigação, possibilidade, permissão.
+          Ex.: <code>can</code>, <code>must</code>, <code>should</code>.
+        </div>
+      </article>
+    </section>
+
+    <p class="footer">Conteúdo formatado em HTML + CSS • Pronto para imprimir ou estudar.</p>
+  </main>
+</body>
+</html>

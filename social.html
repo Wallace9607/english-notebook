@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cumprimentos e Diálogos — Inglês Prático</title>
+  <style>
+    :root{ --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#7dd3fc; --glass: rgba(255,255,255,0.04); }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:linear-gradient(180deg,#061024 0%, #081226 100%); color:#e6eef6; -webkit-font-smoothing:antialiased}
+    .wrap{max-width:1000px;margin-left: 270px;padding:20px}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+    header .logo{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,#0369a1,#0891b2);display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{margin:0;font-size:20px}
+    p.lead{color:var(--muted);margin:6px 0 0}
+
+      /* ==========================
+   NAVIGATION BAR LATERAL
+   ========================== */
+
+
+/* Nav lateral fixa */
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%;
+  width: 240px;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+}
+
+/* Logo */
+.nav-logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 24px;
+  display: block;
+  text-align: center;
+}
+.nav-logo:hover {
+  color: var(--accent2);
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(56,189,248,.08);
+  color: var(--accent2);
+}
+
+
+/* Responsivo: nav vira topo no mobile */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(148,163,184,.12);
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  body {
+    margin-left: 0;
+    margin-top: 70px; /* espaço para a nav no topo */
+  }
+}
+
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .section-title h2{margin:0;font-size:16px}
+    ul.phrases{list-style:none;padding:0;margin:0}
+    li.ph{padding:10px;border-radius:8px;background:var(--glass);margin-bottom:10px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+    .eng{font-weight:600}
+    .pt{color:var(--muted);font-size:13px;margin-top:4px}
+    .pron{color:var(--accent);font-size:13px;margin-top:4px}
+    button.btn{background:#0ea5a4;border:0;padding:8px 12px;border-radius:8px;color:#032;cursor:pointer;font-weight:600}
+    button.small{padding:6px 8px;font-size:13px;border-radius:8px}
+
+    /* Dialog box */
+    .dialog-list{display:flex;flex-direction:column;gap:12px}
+    .dialog{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
+    .line{display:flex;gap:12px;align-items:flex-start}
+    .who{width:44px;height:44px;border-radius:8px;background:#071233;display:flex;align-items:center;justify-content:center;font-weight:700}
+    .bubble{background:rgba(255,255,255,0.02);padding:8px;border-radius:8px}
+    .pron-toggle{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:6px;border-radius:6px;color:var(--muted);cursor:pointer}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media(max-width:880px){.grid{grid-template-columns:1fr} .card{padding:12px}}
+  </style>
+</head>
+<body>
+    <nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">🏠 Home</a>
+    <div class="nav-links">
+      <a href="alphabet.html">Alphabet</a>
+      <a href="numbers.html">Numbers</a>
+      <a href="auxiliary-modals.html">Auxiliary & Modals</a>
+      <a href="year-division.html">Year Division</a>
+      <a href="prepositions.html">Prepositions</a>
+      <a href="verb.html">Verb</a>
+      <a href="very-much-many.html">Very / Much / Many</a>
+      <a href="punctuation-accents.html">Punctuation & Accents</a>
+      <a href="social.html">Greetings</a>
+      <a href="dictionary.html">Dictionary</a>
+    </div>
+  </div>
+</nav>
+  <div class="wrap">
+    <header>
+      <div class="logo">EN</div>
+      <div>
+        <h1>Cumprimentos e Social — Inglês prático</h1>
+        <p class="lead">Frases úteis, tradução e pronúncia. Pratique lendo e treinando respostas.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <div class="section-title"><h2>👋 Cumprimentos básicos</h2></div>
+          <ul class="phrases" id="phrases-list">
+            <!-- inserted by JS -->
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <div class="section-title"><h2>🙋 Como perguntar como a pessoa está</h2></div>
+          <ul class="phrases" id="phrases-list-2"></ul>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <div class="section-title"><h2>🙂 Respostas comuns</h2></div>
+          <ul class="phrases" id="phrases-list-3"></ul>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <div class="section-title"><h2>👋 Despedidas</h2></div>
+          <ul class="phrases" id="phrases-list-4"></ul>
+        </div>
+
+      </div>
+
+      <aside>
+        <div class="card">
+          <div class="section-title"><h2>🗨️ Diálogos de exemplo</h2></div>
+          <div class="dialog-list" id="dialogs">
+            <!-- dialogs from JS -->
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn" id="practice-btn">Praticar (modo A fala)</button>
+            <button class="small btn" id="reveal-all">Revelar respostas</button>
+            <button class="small btn" id="reset-practice">Resetar</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;font-size:13px;color:var(--muted)">
+          <strong>Dicas de uso</strong>
+          <p>Use o botão <em>Praticar</em> para ver as falas do personagem A e tente responder em voz alta antes de clicar em "Mostrar resposta". Você também pode copiar qualquer frase clicando no botão <em>Copy</em>.</p>
+        </div>
+
+      </aside>
+    </div>
+
+    <footer>Feito para prática rápida — leia em voz alta e repita. Boa sorte!</footer>
+  </div>
+
+  <script>
+    // dados
+    const sections = {
+      basic:[
+        {eng:'Hi!', pt:'Oi!', pron:'Rái'},
+        {eng:'Hello!', pt:'Olá!', pron:'Rélôu'},
+        {eng:'Good morning!', pt:'Bom dia!', pron:'Gud mórnin'},
+        {eng:'Good afternoon!', pt:'Boa tarde!', pron:'Gud áfter-nun'},
+        {eng:'Good evening!', pt:'Boa noite (cumprimento)', pron:'Gud ívnin'},
+        {eng:'Good night!', pt:'Boa noite (despedida)', pron:'Gud nait'}
+      ],
+      ask:[
+        {eng:'How are you?', pt:'Como você está?', pron:'Ráu ár iú'},
+        {eng:'How are you doing?', pt:'Como você está indo?', pron:'Ráu ár iú dúin'},
+        {eng:'How\'s everything?', pt:'Como estão as coisas?', pron:'Ráuz évriting'},
+        {eng:'What\'s up? / Sup?', pt:'E aí?', pron:'Uótssâp / Sâp'},
+        {eng:'How have you been?', pt:'Como você tem estado?', pron:'Ráu rév iú bin'}
+      ],
+      answers:[
+        {eng:'I\'m fine, thanks. And you?', pt:'Estou bem, obrigado. E você?', pron:'Áim fain, tânks. Énd iú?'},
+        {eng:'I\'m good, thanks!', pt:'Estou bem, obrigado!', pron:'Áim gûd, tânks'},
+        {eng:'Not bad.', pt:'Nada mal.', pron:'Nót béd'},
+        {eng:'I\'m a little tired.', pt:'Estou um pouco cansado.', pron:'Áim a lírol táiârd'},
+        {eng:'I\'m doing great!', pt:'Estou ótimo!', pron:'Áim dúin grêit'}
+      ],
+      bye:[
+        {eng:'Bye!', pt:'Tchau!', pron:'Bai'},
+        {eng:'See you later!', pt:'Até mais!', pron:'Sí iú lêirer'},
+        {eng:'Take care.', pt:'Se cuida.', pron:'Teik quér'},
+        {eng:'Have a nice day!', pt:'Tenha um bom dia!', pron:'Rév a nais dêi'},
+        {eng:'See you tomorrow.', pt:'Até amanhã.', pron:'Sí iú tumórrou'},
+        {eng:'Talk to you soon.', pt:'Falo com você em breve.', pron:'Tók tchu iú sún'}
+      ]
+    };
+
+    const dialogs = [
+      {
+        title:'1 — Cumprimento simples',
+        lines:[
+          {who:'A', eng:'Hi! How are you?', pron:'Rái! Ráu ár iú?'},
+          {who:'B', eng:'I\'m good, thanks. And you?', pron:'Áim gûd, tânks. Énd iú?'},
+          {who:'A', eng:'I\'m fine. Nice to see you.', pron:'Áim fain. Náis tchu sí iú.'}
+        ]
+      },
+      {
+        title:'2 — Depois de um tempo',
+        lines:[
+          {who:'A', eng:'Hello! How have you been?', pron:'Rélôu! Ráu rév iú bin?'},
+          {who:'B', eng:'I\'ve been great, thanks. And you?', pron:'Áiv bin grêit, tânks. Énd iú?'},
+          {who:'A', eng:'Not bad. Just busy with work.', pron:'Nót béd. Djâst bízi uith uârk.'}
+        ]
+      },
+      {
+        title:'3 — Despedida educada',
+        lines:[
+          {who:'A', eng:'It was nice talking to you.', pron:'It uóz nais tókinn tchu iú.'},
+          {who:'B', eng:'Same here! See you later.', pron:'Seim ríer! Sí iú lêirer.'},
+          {who:'A', eng:'Take care.', pron:'Teik quér.'}
+        ]
+      },
+      {
+        title:'4 — Informal com amigos',
+        lines:[
+          {who:'A', eng:'Hey, what\'s up?', pron:'Rêi, uótssâp?'},
+          {who:'B', eng:'Not much. Just relaxing. How about you?', pron:'Nót mâti. Djâst riléksin. Ráu abáut iú?'},
+          {who:'A', eng:'Same here.', pron:'Seim ríer.'}
+        ]
+      }
+    ];
+
+    // render phrases
+    function renderList(id, items){
+      const el = document.getElementById(id);
+      items.forEach(it=>{
+        const li = document.createElement('li'); li.className='ph';
+        li.innerHTML = `
+          <div>
+            <div class="eng">${it.eng}</div>
+            <div class="pt">${it.pt}</div>
+            <div class="pron">${it.pron}</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
+            <button class="small" onclick="copyText('${escapeForJS(it.eng)}')">Copy</button>
+            <button class="small" onclick="speakText('${escapeForJS(it.eng)}')">Ouvir</button>
+          </div>
+        `;
+        el.appendChild(li);
+      })
+    }
+
+    function escapeForJS(s){
+      return s.replace(/\\/g,'\\\\').replace(/'/g, "\\'").replace(/\n/g,'\\n');
+    }
+
+    renderList('phrases-list', sections.basic);
+    renderList('phrases-list-2', sections.ask);
+    renderList('phrases-list-3', sections.answers);
+    renderList('phrases-list-4', sections.bye);
+
+    // render dialogs
+    const dialogsEl = document.getElementById('dialogs');
+    dialogs.forEach((d,di)=>{
+      const wrap = document.createElement('div'); wrap.className='dialog';
+      const title = document.createElement('div'); title.style.marginBottom='8px'; title.innerHTML = `<strong>${d.title}</strong>`;
+      wrap.appendChild(title);
+      d.lines.forEach((ln,li)=>{
+        const line = document.createElement('div'); line.className='line';
+        const who = document.createElement('div'); who.className='who'; who.textContent=ln.who;
+        const bubble = document.createElement('div'); bubble.className='bubble';
+        bubble.innerHTML = `<div style="font-weight:700">${ln.eng}</div><div class="pt" style="margin-top:6px">${ln.pron}</div>`;
+        const actions = document.createElement('div'); actions.style.marginLeft='auto'; actions.style.display='flex'; actions.style.gap='6px';
+
+        const showBtn = document.createElement('button'); showBtn.textContent='Mostrar resposta'; showBtn.className='pron-toggle';
+        showBtn.onclick = ()=>{ bubble.style.filter = 'none'; bubble.style.opacity=1; };
+
+        const copyBtn = document.createElement('button'); copyBtn.textContent='Copy'; copyBtn.className='pron-toggle';
+        copyBtn.onclick = ()=>{ copyText(ln.eng); };
+
+        actions.appendChild(showBtn); actions.appendChild(copyBtn);
+
+        line.appendChild(who);
+        line.appendChild(bubble);
+        line.appendChild(actions);
+        // initially hide B lines
+        if(ln.who === 'B'){
+          bubble.style.opacity = 0.08; bubble.style.filter='blur(2px)';
+          showBtn.style.display='inline-block';
+        } else {
+          showBtn.style.display='none';
+        }
+        wrap.appendChild(line);
+      })
+      dialogsEl.appendChild(wrap);
+    })
+
+    // practice mode
+    const practiceBtn = document.getElementById('practice-btn');
+    const revealAll = document.getElementById('reveal-all');
+    const resetBtn = document.getElementById('reset-practice');
+
+    practiceBtn.addEventListener('click', ()=>{
+      // show only A lines, dim B lines (already dimmed). Scroll first B into view as interactive practice
+      const firstB = document.querySelectorAll('.dialog .line').forEach((ln)=>{
+        // nothing
+      });
+      // focus user: highlight A lines briefly
+      document.querySelectorAll('.dialog .line').forEach(el=>{
+        el.style.transition='box-shadow 200ms'; el.style.boxShadow='none';
+      });
+      // simple hint: scroll to first dialog
+      document.querySelector('.dialog')?.scrollIntoView({behavior:'smooth'});
+      alert('Modo prática ativado: leia em voz alta as falas de A. Para ver a resposta de B clique em "Mostrar resposta" ao lado da fala.');
+    })
+
+    revealAll.addEventListener('click', ()=>{
+      document.querySelectorAll('.dialog .bubble').forEach(b=>{ b.style.filter='none'; b.style.opacity=1; });
+    })
+
+    resetBtn.addEventListener('click', ()=>{
+      document.querySelectorAll('.dialog .bubble').forEach(b=>{ if(b.previousElementSibling && b.previousElementSibling.textContent.trim()==='B'){ b.style.opacity=0.08; b.style.filter='blur(2px)'; } else { b.style.opacity=1; b.style.filter='none'; }});
+      window.scrollTo({top:0,behavior:'smooth'});
+    })
+
+    // copy helper
+    function copyText(text){
+      navigator.clipboard?.writeText(text).then(()=>{
+        alert('Texto copiado: ' + text);
+      }).catch(()=>{ prompt('Copy the text below:', text); });
+    }
+
+    // simple speech using Web Speech API (if available)
+    function speakText(text){
+      if('speechSynthesis' in window){
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'en-US';
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(u);
+      } else {
+        alert('TTS não disponível no seu navegador');
+      }
+    }
+
+  </script>
+</body>
+</html>

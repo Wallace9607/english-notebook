@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estudos de Inglês - Menu Principal</title>
+  <style>
+    :root{
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-2: #0b1220;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2:#22d3ee;
+      --ring: 0 0 0 1px rgba(188, 228, 245, 0.2), 0 10px 30px -10px rgba(87, 87, 87, 0.25);
+    }
+    * { box-sizing: border-box }
+    html, body { height: 100%; margin: 0; padding: 0; }
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,.15), transparent 60%),
+        radial-gradient(1000px 600px at 90% 0%, rgba(34,211,238,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg), #060b16 40%, #050a14 100%);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      margin: 50px;
+    }
+    main{
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+    }
+    h1{
+      font-size: clamp(28px, 5vw, 42px);
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 10px;
+    }
+    p.subtitle{
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0 auto 40px;
+      font-size: 16px;
+    }
+    .topics{
+      margin-bottom: 30px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media(min-width: 700px){
+      .topics{ grid-template-columns: 1fr 1fr; }
+    }
+    a.topic{
+      display: block;
+      padding: 20px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--panel-2), rgba(15,23,42,.7));
+      border: 1px solid rgba(148,163,184,.12);
+      box-shadow: var(--ring);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    a.topic:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 0 0 1px rgba(121, 122, 122, 0.3), 0 15px 35px -10px rgba(61, 61, 61, 0.4);
+    }
+    a.topic h2{
+      font-size: 20px;
+      margin: 0 0 6px;
+      color: var(--accent);
+    }
+    a.topic p{
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Estudos de Inglês</h1>
+    <p class="subtitle">
+      Escolha um tópico para estudar. Cada seção contém explicações detalhadas, exemplos e formatação clara para facilitar o aprendizado.
+    </p>
+
+    <section class="topics">
+  <a href="alphabet.html" class="topic">
+    <h2>Alphabet</h2>
+    <p>Learn all the letters of the alphabet with their sounds.</p>
+  </a>
+
+  <a href="numbers.html" class="topic">
+    <h2>Numbers</h2>
+    <p>Learn numbers with pronunciation and examples.</p>
+  </a>
+
+  <a href="auxiliary-modals.html" class="topic">
+    <h2>Auxiliary & Modal Verbs</h2>
+    <p>What they are, how to use them, and practical examples.</p>
+  </a>
+
+  <a href="verb.html" class="topic">
+    <h2>Verb</h2>
+    <p>The most important verb in English, with forms and uses.</p>
+  </a>
+
+  <a href="prepositions.html" class="topic">
+    <h2>Prepositions</h2>
+    <p>Learn how to use in, on, at for time and place.</p>
+  </a>
+
+  <a href="year-division.html" class="topic">
+    <h2>Year Division</h2>
+    <p>Days of the week, months, and seasons with pronunciation.</p>
+  </a>
+
+  <a href="very-much-many.html" class="topic">
+    <h2>Very / Much / Many</h2>
+    <p>Rules and examples to use intensity and quantity words correctly.</p>
+  </a>
+
+  <a href="punctuation-accents.html" class="topic">
+    <h2>Punctuation & Accents</h2>
+    <p>Learn punctuation marks and accents used in English.</p>
+  </a>
+
+  <a href="social.html" class="topic">
+    <h2>Greetings & Dialogues</h2>
+    <p>Practical phrases, dialogues, and pronunciation tips.</p>
+  </a>
+
+  <a href="dictionary.html" class="topic">
+    <h2>Dictionary</h2>
+    <p>A quick reference for common words and meanings.</p>
+  </a>
+  <a href="paises.html" class="topic">
+    <h2>Countries</h2>
+  </a>
+</section>
+  </main>
+</body>
+</html>

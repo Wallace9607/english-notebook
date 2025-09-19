@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu Dicionário de Inglês</title>
+<style>
+:root{
+  --bg:#0f172a; --panel:#0b1220; --panel2:#111827; --text:#e5e7eb; --muted:#94a3b8;
+  --accent:#38bdf8; --accent2:#22d3ee; --ring:0 0 0 1px rgba(56,189,248,.2), 0 10px 30px -10px rgba(56,189,248,.25);
+}
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial; background:
+  radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,.15), transparent 60%),
+  radial-gradient(1000px 600px at 90% 0%, rgba(34,211,238,.10), transparent 60%),
+  linear-gradient(180deg, var(--bg), #060b16 40%, #050a14 100%); padding:32px 16px;}
+    /* ==========================
+   NAVIGATION BAR LATERAL
+   ========================== */
+
+
+/* Nav lateral fixa */
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%;
+  width: 240px;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+}
+
+/* Logo */
+.nav-logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 24px;
+  display: block;
+  text-align: center;
+}
+.nav-logo:hover {
+  color: var(--accent2);
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(56,189,248,.08);
+  color: var(--accent2);
+}
+
+
+/* Responsivo: nav vira topo no mobile */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(148,163,184,.12);
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  body {
+    margin-left: 0;
+    margin-top: 70px; /* espaço para a nav no topo */
+  }
+}
+.wrap{max-width:900px;margin:0 auto;text-align:center}
+h1{margin:0;font-size:clamp(28px,5vw,42px);background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}
+p.subtitle{color:var(--muted);font-size:16px;max-width:65ch;margin:8px auto 32px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;justify-items:center}
+
+.card{background:linear-gradient(180deg, var(--panel2), rgba(15,23,42,.7)); border:1px solid rgba(148,163,184,.12); border-radius:14px; box-shadow:var(--ring); padding:24px; width:100%; max-width:280px; transition:transform .2s, box-shadow .2s; cursor:pointer; text-decoration:none; color:var(--text);}
+.card:hover{transform:translateY(-4px); box-shadow:0 0 0 1px rgba(34,211,238,.30), 0 15px 35px -10px rgba(34,211,238,.40);}
+.card h2{margin:0;font-size:20px;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}
+.card p{margin-top:8px;color:var(--muted);font-size:14px;text-align:center;}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">🏠 Home</a>
+    <div class="nav-links">
+      <a href="alphabet.html">Alphabet</a>
+      <a href="numbers.html">Numbers</a>
+      <a href="auxiliary-modals.html">Auxiliary & Modals</a>
+      <a href="year-division.html">Year Division</a>
+      <a href="prepositions.html">Prepositions</a>
+      <a href="verb.html">Verb</a>
+      <a href="very-much-many.html">Very / Much / Many</a>
+      <a href="punctuation-accents.html">Punctuation & Accents</a>
+      <a href="social.html">Greetings</a>
+      <a href="dictionary.html">Dictionary</a>
+    </div>
+  </div>
+</nav>
+<main class="wrap">
+  <h1>Meu Dicionário de Inglês</h1>
+  <p class="subtitle">Acesse seus dicionários de palavras e frases para praticar inglês com tradução, pronúncia e áudio.</p>
+  
+  <div class="grid">
+    <a href="dictionary_words.html" class="card">
+      <h2>📖 Palavras</h2>
+      <p>Dicionário de palavras com pronúncia, áudio e cards interativos.</p>
+    </a>
+    
+    <a href="dictionary_phrases.html" class="card">
+      <h2>💬 Frases</h2>
+      <p>Dicionário de frases completas com tradução, pronúncia e áudio.</p>
+    </a>
+  </div>
+</main>
+</body>
+</html>

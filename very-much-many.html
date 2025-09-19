@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Very / Much / Many / A lot of</title>
+  <style>
+    :root{
+      --bg:#071127; --panel:#0f1724; --muted:#9aa8bd; --text:#e6eef8; --accent:#7dd3fc; --glass: rgba(255,255,255,0.02);
+      --card:#0b1320;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(180deg,var(--bg),#030611); color:var(--text); padding:90px 20px 40px;}
+      /* ==========================
+   NAVIGATION BAR LATERAL
+   ========================== */
+
+
+/* Nav lateral fixa */
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%;
+  width: 240px;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+}
+
+/* Logo */
+.nav-logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 24px;
+  display: block;
+  text-align: center;
+}
+.nav-logo:hover {
+  color: var(--accent2);
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(56,189,248,.08);
+  color: var(--accent2);
+}
+
+
+/* Responsivo: nav vira topo no mobile */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(148,163,184,.12);
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  body {
+    margin-left: 0;
+    margin-top: 70px; /* espaço para a nav no topo */
+  }
+}
+    main{max-width:1100px;margin-left: 270px;}
+    header{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+    h1{font-size:clamp(22px,4vw,36px);background:linear-gradient(90deg,var(--accent),#38bdf8);-webkit-background-clip:text;color:transparent}
+    p.lead{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+    .card{background:linear-gradient(180deg,var(--card),rgba(6,12,24,.6));border-radius:12px;padding:33px;border:1px solid rgba(125,211,252,.06)}
+    .card h2{color:var(--accent);margin-bottom:8px}
+    .examples{margin-top:8px}
+    .examples li{margin:6px 0;color:var(--text)}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{padding:8px;border-bottom:1px dashed rgba(255,255,255,0.03);text-align:left;color:var(--muted)}
+    th{color:var(--muted);font-weight:700}
+    .note{background:rgba(125,211,252,0.03);padding:10px;border-radius:8px;color:var(--muted);margin-top:10px}
+    footer{margin-top:22px;color:var(--muted)}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">🏠 Home</a>
+    <div class="nav-links">
+      <a href="alphabet.html">Alphabet</a>
+      <a href="numbers.html">Numbers</a>
+      <a href="auxiliary-modals.html">Auxiliary & Modals</a>
+      <a href="year-division.html">Year Division</a>
+      <a href="prepositions.html">Prepositions</a>
+      <a href="verb.html">Verb</a>
+      <a href="very-much-many.html">Very / Much / Many</a>
+      <a href="punctuation-accents.html">Punctuation & Accents</a>
+      <a href="social.html">Greetings</a>
+      <a href="dictionary.html">Dictionary</a>
+    </div>
+  </div>
+</nav>
+  <main>
+    <header>
+      <h1>Very, Much, Many e A lot of — como usar</h1>
+      <p class="lead">Regras simples, exemplos e dicas para escolher a palavra certa quando quiser expressar intensidade ou quantidade em inglês.</p>
+    </header>
+
+    <section class="grid">
+      <article class="card" id="very">
+        <h2>VERY</h2>
+        <p>Use <strong>very</strong> para intensificar <strong>adjetivos</strong> e <strong>advérbios</strong>. Não se usa antes de substantivos.</p>
+        <div class="examples">
+          <ul>
+            <li>She is <strong>very</strong> happy. — Ela está muito feliz.</li>
+            <li>This movie is <strong>very</strong> interesting. — Este filme é muito interessante.</li>
+            <li>You speak <strong>very</strong> clearly. — Você fala muito claramente.</li>
+          </ul>
+        </div>
+        <div class="note">Estrutura: <code>sujeito + verbo + very + adjetivo/advérbio</code></div>
+      </article>
+
+      <article class="card" id="much">
+        <h2>MUCH</h2>
+        <p>Use <strong>much</strong> com <strong>substantivos incontáveis</strong> (não são quantificáveis unitariamente). Muito comum em perguntas e frases negativas.</p>
+        <div class="examples">
+          <ul>
+            <li>Do you have <strong>much</strong> money? — Você tem muito dinheiro?</li>
+            <li>I don’t have <strong>much</strong> time. — Eu não tenho muito tempo.</li>
+            <li>There isn’t <strong>much</strong> sugar left. — Não resta muito açúcar.</li>
+          </ul>
+        </div>
+        <div class="note">Incontáveis: <em>water, money, information, furniture, advice, time</em>.</div>
+      </article>
+
+      <article class="card" id="many">
+        <h2>MANY</h2>
+        <p>Use <strong>many</strong> com <strong>substantivos contáveis no plural</strong>. Também é frequente em perguntas e negativas, mas pode aparecer em afirmativas formais.</p>
+        <div class="examples">
+          <ul>
+            <li>How <strong>many</strong> books do you have? — Quantos livros você tem?</li>
+            <li>I don’t have <strong>many</strong> friends. — Eu não tenho muitos amigos.</li>
+            <li>There are <strong>many</strong> options. — Há muitas opções.</li>
+          </ul>
+        </div>
+        <div class="note">Contáveis: <em>books, cars, apples, chairs, people</em>.</div>
+      </article>
+
+      <article class="card" id="a-lot-of">
+        <h2>A LOT OF</h2>
+        <p><strong>A lot of</strong> funciona tanto com <strong>contáveis</strong> quanto com <strong>incontáveis</strong>. É muito usado em frases afirmativas (mais natural que <em>much/many</em> em afirmativas).</p>
+        <div class="examples">
+          <ul>
+            <li>I have <strong>a lot of</strong> friends. — Tenho muitos amigos. (contável)</li>
+            <li>She drinks <strong>a lot of</strong> water. — Ela bebe muita água. (incontável)</li>
+            <li>We had <strong>a lot of</strong> fun at the party. — Nos divertimos muito na festa.</li>
+          </ul>
+        </div>
+        <div class="note">Substituto natural para afirmativas em muitas situações.</div>
+      </article>
+    </section>
+
+    <section class="card" style="margin-top:18px">
+      <h2>Quadro rápido de uso</h2>
+      <table>
+        <thead>
+          <tr><th>Palavra</th><th>Usa com</th><th>Quando usar</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>very</td><td>adjetivos / advérbios</td><td>para intensificar (very loud, very small)</td></tr>
+          <tr><td>much</td><td>incontáveis</td><td>perguntas / negativas (Do you have much time?)</td></tr>
+          <tr><td>many</td><td>contáveis (plural)</td><td>perguntas / negativas (How many cars?)</td></tr>
+          <tr><td>a lot of</td><td>contáveis / incontáveis</td><td>afirmativas, negativas, perguntas — uso geral</td></tr>
+        </tbody>
+      </table>
+
+      <div class="note">Dica: se ficar em dúvida entre <em>much</em> e <em>a lot of</em> em uma afirmativa com incontável, prefira <em>a lot of</em> — soa mais natural no inglês falado.</div>
+    </section>
+
+    <section class="card" style="margin-top:18px">
+      <h2>Exercícios rápidos</h2>
+      <ol style="color:var(--text);margin-top:8px">
+        <li>They ____ (have) money. — Resposta: <code>have a lot of</code> or <code>have much</code>? (natural: <strong>have a lot of</strong> money)</li>
+        <li>How ____ apples are on the table? — Resposta: <strong>many</strong></li>
+        <li>She is ____ smart. — Resposta: <strong>very</strong></li>
+        <li>I don’t have ____ time. — Resposta: <strong>much</strong></li>
+        <li>We saw ____ people at the concert. — Resposta: <strong>a lot of</strong> / <strong>many</strong> (ambos são possíveis; <em>a lot of</em> é mais coloquial)</li>
+      </ol>
+      <div class="note">Quer que eu torne esses exercícios interativos (javascript) para responder e testar automaticamente?</div>
+    </section>
+
+    <footer>
+
+    </footer>
+  </main>
+</body>
+</html>

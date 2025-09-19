@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preposições In, On, At</title>
+  <style>
+    :root{
+      --bg:#071127; --panel:#0f1724; --muted:#9aa8bd; --text:#e6eef8; --accent:#7dd3fc; --card:#0b1320;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui, sans-serif;background:linear-gradient(180deg,var(--bg),#030611);color:var(--text);padding:90px 20px 40px;}
+      /* ==========================
+   NAVIGATION BAR LATERAL
+   ========================== */
+
+
+/* Nav lateral fixa */
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%;
+  width: 240px;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+}
+
+/* Logo */
+.nav-logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 24px;
+  display: block;
+  text-align: center;
+}
+.nav-logo:hover {
+  color: var(--accent2);
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(56,189,248,.08);
+  color: var(--accent2);
+}
+
+
+/* Responsivo: nav vira topo no mobile */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(148,163,184,.12);
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  body {
+    margin-left: 0;
+    margin-top: 70px; /* espaço para a nav no topo */
+  }
+}
+    main{max-width:1100px;margin-left: 270px;}
+    header{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+    h1{font-size:clamp(22px,4vw,36px);background:linear-gradient(90deg,var(--accent),#38bdf8);-webkit-background-clip:text;color:transparent}
+    p.lead{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr;gap:18px; margin-top:18px}
+    .card{background:linear-gradient(180deg,var(--card),rgba(6,12,24,.6));border-radius:12px;padding:33px;border:1px solid rgba(125,211,252,.06)}
+    .card h2{color:var(--accent);margin-bottom:8px}
+    .examples{margin-top:8px}
+    .examples li{margin:6px 0;color:var(--text)}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{padding:8px;border-bottom:1px dashed rgba(255,255,255,0.03);text-align:left;color:var(--muted)}
+    th{color:var(--muted);font-weight:700}
+    .note{background:rgba(125,211,252,0.03);padding:10px;border-radius:8px;color:var(--muted);margin-top:10px}
+    footer{margin-top:22px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">🏠 Home</a>
+    <div class="nav-links">
+      <a href="alphabet.html">Alphabet</a>
+      <a href="numbers.html">Numbers</a>
+      <a href="auxiliary-modals.html">Auxiliary & Modals</a>
+      <a href="year-division.html">Year Division</a>
+      <a href="prepositions.html">Prepositions</a>
+      <a href="verb.html">Verb</a>
+      <a href="very-much-many.html">Very / Much / Many</a>
+      <a href="punctuation-accents.html">Punctuation & Accents</a>
+      <a href="social.html">Greetings</a>
+      <a href="dictionary.html">Dictionary</a>
+    </div>
+  </div>
+</nav>
+  <main>
+    <header>
+      <h1>Preposições: In, On, At</h1>
+      <p class="lead">Explicação detalhada sobre como usar <strong>in</strong>, <strong>on</strong> e <strong>at</strong> em inglês, para lugares e tempo.</p>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <h2>IN</h2>
+        <p><strong>Lugar:</strong> dentro de algo ou áreas grandes.</p>
+        <div class="examples">
+          <ul>
+            <li>I live <strong>in</strong> Brazil. — Eu moro no Brasil.</li>
+            <li>She is <strong>in</strong> the car. — Ela está dentro do carro.</li>
+            <li>He works <strong>in</strong> an office. — Ele trabalha em um escritório.</li>
+          </ul>
+        </div>
+        <p style="margin-top: 30px;"><strong>Tempo:</strong> períodos longos (meses, anos, séculos, partes do dia).</p>
+        <div class="examples">
+          <ul>
+            <li>I was born <strong>in</strong> 2000. — Eu nasci em 2000.</li>
+            <li>We met <strong>in</strong> June. — Nós nos conhecemos em junho.</li>
+            <li>She studies <strong>in</strong> the morning. — Ela estuda de manhã.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>ON</h2>
+        <p><strong>Lugar:</strong> sobre algo, superfícies ou transporte grande.</p>
+        <div class="examples">
+          <ul>
+            <li>The book is <strong>on</strong> the table. — O livro está sobre a mesa.</li>
+            <li>There is a poster <strong>on</strong> the wall. — Há um pôster na parede.</li>
+            <li>He is <strong>on</strong> the bus. — Ele está no ônibus.</li>
+          </ul>
+        </div>
+        <p style="margin-top: 30px;"><strong>Tempo:</strong> dias e datas específicas.</p>
+        <div class="examples">
+          <ul>
+            <li>I have a meeting <strong>on</strong> Monday. — Tenho reunião na segunda-feira.</li>
+            <li>The party is <strong>on</strong> July 4th. — A festa é no dia 4 de julho.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>AT</h2>
+        <p><strong>Lugar:</strong> ponto exato ou endereço específico.</p>
+        <div class="examples">
+          <ul>
+            <li>She is <strong>at</strong> the bus stop. — Ela está no ponto de ônibus.</li>
+            <li>I’m <strong>at</strong> the cinema. — Eu estou no cinema.</li>
+            <li>He lives <strong>at</strong> 25 Main Street. — Ele mora na rua 25 Main Street.</li>
+          </ul>
+        </div>
+        <p style="margin-top: 30px;"><strong>Tempo:</strong> horários exatos.</p>
+        <div class="examples">
+          <ul>
+            <li>I wake up <strong>at</strong> 7 a.m. — Eu acordo às 7h.</li>
+            <li>The class starts <strong>at</strong> noon. — A aula começa ao meio-dia.</li>
+            <li>Let’s meet <strong>at</strong> midnight. — Vamos nos encontrar à meia-noite.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="card" style="margin-top:18px">
+      <h2>Resumo Rápido</h2>
+      <table>
+        <thead>
+          <tr><th>Preposição</th><th>Lugar</th><th>Tempo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>IN</td><td>dentro / áreas grandes</td><td>meses, anos, séculos, partes do dia</td></tr>
+          <tr><td>ON</td><td>sobre / superfícies / transporte grande</td><td>dias, datas</td></tr>
+          <tr><td>AT</td><td>ponto exato / endereço / evento</td><td>horas exatas / momentos</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p>Dica: para transporte pequeno use <strong>in</strong> (taxi, car), para transporte grande use <strong>on</strong> (bus, train, plane).</p>
+    </footer>
+  </main>
+</body>
+</html>

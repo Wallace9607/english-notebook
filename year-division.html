@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dias, Meses e Estações em Inglês — Interativo</title>
+<style>
+:root{
+  --bg:#0f172a; --panel:#0b1220; --panel2:#111827; --text:#e5e7eb; --muted:#94a3b8;
+  --accent:#38bdf8; --accent2:#22d3ee; --ring:0 0 0 1px rgba(56,189,248,.2),0 10px 30px -10px rgba(56,189,248,.25);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,.15), transparent 60%),
+    radial-gradient(1000px 600px at 90% 0%, rgba(34,211,238,.10), transparent 60%),
+    linear-gradient(180deg, var(--bg), #060b16 40%, #050a14 100%);
+  background-attachment:fixed; padding:32px 16px 80px;
+}
+  /* ==========================
+   NAVIGATION BAR LATERAL
+   ========================== */
+
+
+/* Nav lateral fixa */
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%;
+  width: 240px;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+}
+/* Logo */
+.nav-logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 24px;
+  display: block;
+  text-align: center;
+}
+.nav-logo:hover {
+  color: var(--accent2);
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(56,189,248,.08);
+  color: var(--accent2);
+}
+
+
+/* Responsivo: nav vira topo no mobile */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(148,163,184,.12);
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  body {
+    margin-left: 0;
+    margin-top: 70px; /* espaço para a nav no topo */
+  }
+}
+.wrap{max-width:1000px;margin-left: 270px;}
+header{text-align:center;margin-bottom:24px}
+h1{margin:0;font-size:clamp(28px,5vw,42px);background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}
+.subtitle{color:var(--muted);font-size:16px;max-width:65ch;margin:8px auto 0}
+
+.toolbar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px auto}
+.btn{background:#0ea5a4;border:0;color:#032;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+.btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(148,163,184,.22)}
+
+.grid{display:grid;grid-template-columns:1fr 330px;gap:16px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+.panel{background:linear-gradient(180deg,var(--panel), rgba(15,23,42,.72)); border:1px solid rgba(148,163,184,.12); border-radius:14px; box-shadow:var(--ring); padding:16px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:12px}
+.card{background:linear-gradient(180deg, var(--panel2), rgba(15,23,42,.7)); border:1px solid rgba(148,163,184,.12); border-radius:12px; padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:transform .18s ease, box-shadow .18s ease}
+.card:hover{transform:translateY(-3px); box-shadow:0 0 0 1px rgba(34,211,238,.30), 0 15px 35px -10px rgba(34,211,238,.40)}
+.card span{font-size:20px;font-weight:700;color:var(--accent);text-align:center}
+.card small{color:var(--muted);margin-top:6px;text-align:center;font-size:14px}
+.pron{margin-top:4px;color:#80e7ff;font-size:13px}
+.card-actions{display:flex;gap:6px;margin-top:10px}
+.chip{font-size:12px;border-radius:8px;padding:6px 8px;border:1px solid rgba(148,163,184,.2);background:transparent;color:var(--text);cursor:pointer}
+
+/* Quiz */
+.quiz h3{margin:8px 0 12px}
+.quiz .q{font-size:18px;margin:0 0 8px;color:#c7d2fe}
+.quiz input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(148,163,184,.22);background:#0c1426;color:var(--text)}
+.quiz .row{display:flex;gap:8px;margin-top:8px}
+.quiz .hint{color:var(--muted);font-size:13px;margin-top:6px}
+.ok{color:#86efac}
+.bad{color:#fca5a5}
+
+footer{margin-top:16px;color:var(--muted);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+    <nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">🏠 Home</a>
+    <div class="nav-links">
+      <a href="alphabet.html">Alphabet</a>
+      <a href="numbers.html">Numbers</a>
+      <a href="auxiliary-modals.html">Auxiliary & Modals</a>
+      <a href="year-division.html">Year Division</a>
+      <a href="prepositions.html">Prepositions</a>
+      <a href="verb.html">Verb</a>
+      <a href="very-much-many.html">Very / Much / Many</a>
+      <a href="punctuation-accents.html">Punctuation & Accents</a>
+      <a href="social.html">Greetings</a>
+      <a href="dictionary.html">Dictionary</a>
+    </div>
+  </div>
+</nav>
+<main class="wrap">
+  <header>
+    <h1>Dias, Meses e Estações</h1>
+    <p class="subtitle">Aprenda e pratique dias da semana, meses e estações do ano em inglês com pronúncia (pt-br aproximada), áudio e quiz.</p>
+    <div class="toolbar">
+      <button class="btn" id="togglePron">Alternar pronúncia</button>
+      <button class="btn secondary" id="shuffle">Embaralhar</button>
+      <button class="btn secondary" id="reset">Resetar</button>
+    </div>
+  </header>
+
+  <div class="grid">
+    <section class="panel">
+      <h3>Dias da Semana</h3>
+      <div class="cards" id="days"></div>
+      <h3>Meses do Ano</h3>
+      <div class="cards" id="months"></div>
+      <h3>Estações do Ano</h3>
+      <div class="cards" id="seasons"></div>
+    </section>
+
+    <aside class="panel quiz">
+      <h3>🧠 Quiz rápido</h3>
+      <p class="q" id="quizQ">Carregando pergunta…</p>
+      <input id="quizA" placeholder="Digite sua resposta aqui" autocomplete="off" />
+      <div class="row">
+        <button class="btn" id="check">Verificar</button>
+        <button class="btn secondary" id="skip">Pular</button>
+        <button class="btn secondary" id="speakQ">Ouvir</button>
+      </div>
+      <div class="hint" id="hint"></div>
+    </aside>
+  </div>
+
+  <footer>Use os botões de cada cartão para <strong>ouvir</strong>. A pronúncia é uma aproximação para ajudar a falar.</footer>
+</main>
+
+<script>
+const data = {
+  days: [
+    {en:"Monday",pt:"Segunda-feira",pr:"Mãn-dei"},
+    {en:"Tuesday",pt:"Terça-feira",pr:"Tchuus-dei"},
+    {en:"Wednesday",pt:"Quarta-feira",pr:"Uéns-dei"},
+    {en:"Thursday",pt:"Quinta-feira",pr:"Thãrs-dei"},
+    {en:"Friday",pt:"Sexta-feira",pr:"Fraidei"},
+    {en:"Saturday",pt:"Sábado",pr:"Sá-te-dei"},
+    {en:"Sunday",pt:"Domingo",pr:"Sãn-dei"}
+  ],
+  months: [
+    {en:"January",pt:"Janeiro",pr:"Djén-u-éri"},
+    {en:"February",pt:"Fevereiro",pr:"Feb-ru-éri"},
+    {en:"March",pt:"Março",pr:"Mártch"},
+    {en:"April",pt:"Abril",pr:"Êi-pril"},
+    {en:"May",pt:"Maio",pr:"Mei"},
+    {en:"June",pt:"Junho",pr:"Djun"},
+    {en:"July",pt:"Julho",pr:"Djulai"},
+    {en:"August",pt:"Agosto",pr:"Ó-gust"},
+    {en:"September",pt:"Setembro",pr:"Sep-tém-ber"},
+    {en:"October",pt:"Outubro",pr:"Oc-tôu-ber"},
+    {en:"November",pt:"Novembro",pr:"Nou-vém-ber"},
+    {en:"December",pt:"Dezembro",pr:"Di-sém-ber"}
+  ],
+  seasons: [
+    {en:"Spring",pt:"Primavera",pr:"Spríng"},
+    {en:"Summer",pt:"Verão",pr:"Sã-mer"},
+    {en:"Autumn / Fall",pt:"Outono",pr:"Ó-tam / Fól"},
+    {en:"Winter",pt:"Inverno",pr:"Uín-ter"}
+  ]
+};
+
+const togglePron = document.getElementById('togglePron');
+const shuffleBtn = document.getElementById('shuffle');
+const resetBtn = document.getElementById('reset');
+let showPron = true;
+
+function speak(text){
+  if('speechSynthesis' in window){
+    const u=new SpeechSynthesisUtterance(text); u.lang='en-US';
+    window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+  } else alert('TTS não disponível');
+}
+
+function renderCards(sectionId, items){
+  const container=document.getElementById(sectionId);
+  container.innerHTML='';
+  items.forEach(item=>{
+    const card=document.createElement('div');
+    card.className='card';
+    card.innerHTML=`
+      <span>${item.en}</span>
+      <small>${item.pt}</small>
+      <div class="pron" style="display:${showPron?'block':'none'}">${item.pr}</div>
+      <div class="card-actions"><button class="chip" onclick="speak('${item.en}')">Ouvir</button></div>`;
+    container.appendChild(card);
+  });
+}
+
+let currentDays=[...data.days];
+let currentMonths=[...data.months];
+let currentSeasons=[...data.seasons];
+
+function renderAll(){ renderCards('days',currentDays); renderCards('months',currentMonths); renderCards('seasons',currentSeasons); }
+renderAll();
+
+togglePron.onclick=()=>{showPron=!showPron; renderAll();}
+shuffleBtn.onclick=()=>{
+  currentDays=currentDays.sort(()=>Math.random()-0.5);
+  currentMonths=currentMonths.sort(()=>Math.random()-0.5);
+  currentSeasons=currentSeasons.sort(()=>Math.random()-0.5);
+  renderAll();
+}
+resetBtn.onclick=()=>{
+  currentDays=[...data.days];
+  currentMonths=[...data.months];
+  currentSeasons=[...data.seasons];
+  renderAll();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Quiz
+const qEl=document.getElementById('quizQ');
+const aEl=document.getElementById('quizA');
+const hintEl=document.getElementById('hint');
+const checkBtn=document.getElementById('check');
+const skipBtn=document.getElementById('skip');
+const speakQBtn=document.getElementById('speakQ');
+
+let quizItem=null;
+
+function getAllItems(){ return [...data.days,...data.months,...data.seasons]; }
+
+function newQuestion(){
+  const items=getAllItems();
+  quizItem=items[Math.floor(Math.random()*items.length)];
+  const mode=Math.random()<0.5?'en2pt':'pt2en';
+  quizItem.mode=mode;
+  aEl.value=''; hintEl.textContent='';
+  qEl.textContent=(mode==='en2pt')?`Como se diz "${quizItem.pt}" em inglês?`:`Qual é a tradução de "${quizItem.en}"?`;
+  aEl.focus();
+}
+
+function checkAnswer(){
+  const ans=aEl.value.trim().toLowerCase();
+  if(quizItem.mode==='en2pt'){
+    if(ans===quizItem.en.toLowerCase()){ hintEl.innerHTML=`<span class='ok'>✔ Correto!</span> ${quizItem.pt} = ${quizItem.en}`; newQuestion();}
+    else{ hintEl.innerHTML=`<span class='bad'>✖ Ainda não.</span> Dica: começa com <b>${quizItem.en[0]}</b>.`; }
+  } else {
+    if(ans===quizItem.pt.toLowerCase()){ hintEl.innerHTML=`<span class='ok'>✔ Correto!</span> ${quizItem.en} = ${quizItem.pt}`; newQuestion();}
+    else{ hintEl.innerHTML=`<span class='bad'>✖ Ainda não.</span> Dica: começa com <b>${quizItem.pt[0]}</b>.`; }
+  }
+}
+
+checkBtn.onclick=checkAnswer;
+aEl.addEventListener('keydown',e=>{if(e.key==='Enter')checkAnswer();});
+skipBtn.onclick=newQuestion;
+speakQBtn.onclick=()=>{if(quizItem){const phrase=(quizItem.mode==='en2pt')?quizItem.en:quizItem.pt;speak(phrase);}};
+
+newQuestion();
+</script>
+</body>
+</html>

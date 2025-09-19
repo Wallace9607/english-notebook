@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verbo To Do</title>
+  <style>
+    :root{
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-2: #0b1220;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2:#22d3ee;
+      --ring: 0 0 0 1px rgba(56,189,248,.2), 0 10px 30px -10px rgba(56,189,248,.25);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family: system-ui, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,.15), transparent 60%),
+        radial-gradient(1000px 600px at 90% 0%, rgba(34,211,238,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg), #060b16 40%, #050a14 100%);
+      background-attachment: fixed;
+      color: var(--text);
+      padding: 80px 20px 40px;
+    }
+    .navbar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 100%;
+      width: 240px;
+      background: transparent;
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 16px;
+    }
+    .nav-logo {
+      font-weight: bold;
+      font-size: 20px;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 24px;
+      display: block;
+      text-align: center;
+    }
+    .nav-logo:hover { color: var(--accent-2); }
+    .nav-links { display:flex; flex-direction: column; gap: 14px; }
+    .nav-links a {
+      color: var(--text); text-decoration:none; font-size:15px; font-weight:500;
+      padding: 8px 12px; border-radius: 8px; transition: background 0.2s, color 0.2s;
+    }
+    .nav-links a:hover {
+      background: rgba(56,189,248,.08);
+      color: var(--accent-2);
+    }
+    @media(max-width:768px){
+      .navbar{
+        height:auto; width:100%; flex-direction:row; justify-content:space-between; align-items:center; padding:12px 20px;
+        border-bottom:1px solid rgba(148,163,184,.12);
+      }
+      .nav-links{flex-direction:row; gap:12px; flex-wrap:wrap;}
+      body{margin-top:70px;}
+    }
+    main{max-width:1000px; margin-left:270px;}
+    h1{text-align:center; font-size:clamp(28px,5vw,42px); background:linear-gradient(90deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; color:transparent; margin-bottom:10px;}
+    p.subtitle{text-align:center; color:var(--muted); margin-bottom:30px;}
+    .cards{display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:20px; max-width:900px; margin:0 auto 30px;}
+    .card{
+      background: linear-gradient(180deg, var(--panel-2), rgba(15,23,42,.7));
+      border: 1px solid rgba(148,163,184,.12);
+      border-radius:12px;
+      padding:20px;
+      text-align:center;
+      box-shadow: var(--ring);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 0 0 1px rgba(34,211,238,.3), 0 15px 35px -10px rgba(34,211,238,.4);
+    }
+    .card span{font-size:20px; font-weight:bold; color:var(--accent);}
+    .card small{display:block; color:var(--muted); margin-top:6px;}
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(148,163,184,.06);
+      border-radius:12px;
+      padding:20px;
+      margin-bottom:20px;
+    }
+    h2{color:var(--accent);margin-bottom:10px;}
+    table{width:100%;border-collapse:collapse;margin-top:10px;}
+    table th, table td{padding:8px;border-bottom:1px dashed rgba(148,163,184,.06);text-align:left;}
+    table th{color:var(--muted);font-weight:600;}
+    ul{margin-left:18px;margin-top:8px;color:var(--muted);}
+    code{background: rgba(255,255,255,0.03);padding:2px 6px;border-radius:6px;color:var(--text);}
+    .example{display:block;margin-top:8px;color:var(--text);font-weight:600;}
+    @media (max-width:700px){body{padding:100px 12px 40px}}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">🏠 Home</a>
+      <div class="nav-links">
+        <a href="/verb.html">Verbs</a>
+        <a href="to-be.html">To Be</a>
+        <a href="to-have.html">To Have</a>
+        <a href="to-do.html">To Do</a>
+        <a href="to-go.html">To Go</a>
+        <a href="to-make.html">To Make</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Verbo To Do</h1>
+    <p class="subtitle">Formas, usos e exemplos do verbo <code>to do</code>, usado para ações e como auxiliar.</p>
+
+    <section class="cards" aria-label="formas rápidas">
+      <div class="card">
+        <span>Do / Does</span>
+        <small>Presente (I/you/we/they = do, he/she/it = does)</small>
+        <small class="example">Ex.: I do my homework. / She does the dishes.</small>
+      </div>
+      <div class="card">
+        <span>Did</span>
+        <small>Passado (todos os sujeitos)</small>
+        <small class="example">Ex.: They did their work yesterday.</small>
+      </div>
+      <div class="card">
+        <span>Doing</span>
+        <small>Gerúndio</small>
+        <small class="example">Ex.: He is doing exercises now.</small>
+      </div>
+      <div class="card">
+        <span>Done</span>
+        <small>Particípio</small>
+        <small class="example">Ex.: I have done my homework.</small>
+      </div>
+    </section>
+
+    <section class="panel" id="o-que-e">
+      <h2>1. O que é o verbo <code>to do</code></h2>
+      <p>O verbo <code>to do</code> significa <strong>fazer</strong> em português. Além disso, é muito usado como **verbo auxiliar** em perguntas e negativas.</p>
+    </section>
+
+    <section class="panel" id="formas">
+      <h2>2. Formas principais (Presente / Passado / Futuro)</h2>
+
+      <h3>Presente simples</h3>
+      <table>
+        <tr><th>Pessoa</th><th>Forma</th><th>Tradução</th></tr>
+        <tr><td>I / You / We / They</td><td>do</td><td>faço / faz / fazemos / fazem</td></tr>
+        <tr><td>He / She / It</td><td>does</td><td>ele/ela faz</td></tr>
+      </table>
+
+      <h3>Passado simples</h3>
+      <table>
+        <tr><th>Pessoa</th><th>Forma</th><th>Tradução</th></tr>
+        <tr><td>Todos os sujeitos</td><td>did</td><td>fiz / fez</td></tr>
+      </table>
+
+      <h3>Futuro simples</h3>
+      <p>Usa-se <code>will do</code> para todos os sujeitos:</p>
+      <table>
+        <tr><th>Exemplo</th><th>Tradução</th></tr>
+        <tr><td>I will do / You will do / He will do ...</td><td>Eu farei, você fará, ele fará...</td></tr>
+      </table>
+    </section>
+
+    <section class="panel" id="usos">
+      <h2>3. Principais usos do <code>to do</code></h2>
+      <ul>
+        <li><strong>Ação / fazer:</strong> <em>I do my homework.</em></li>
+        <li><strong>Verbo auxiliar em perguntas:</strong> <em>Do you like pizza?</em></li>
+        <li><strong>Verbo auxiliar em negativas:</strong> <em>She does not eat meat.</em></li>
+        <li><strong>Tempos perfeitos:</strong> <em>I have done the work.</em></li>
+      </ul>
+    </section>
+
+    <section class="panel" id="negativa">
+      <h2>4. Forma negativa</h2>
+      <p>No presente:</p>
+      <ul>
+        <li><code>I do not do</code> my homework. — <span class="example">Eu não faço meu dever de casa.</span></li>
+        <li><code>He does not do</code> the work. — <span class="example">Ele não faz o trabalho.</span></li>
+      </ul>
+      <p>No passado:</p>
+      <ul>
+        <li><code>They did not do</code> the task. — <span class="example">Eles não fizeram a tarefa.</span></li>
+      </ul>
+    </section>
+
+    <section class="panel" id="interrogativa">
+      <h2>5. Forma interrogativa</h2>
+      <ul>
+        <li><code>Do</code> you like pizza? — <span class="example">Você gosta de pizza?</span></li>
+        <li><code>Does</code> he work here? — <span class="example">Ele trabalha aqui?</span></li>
+        <li><code>Did</code> they finish the job? — <span class="example">Eles terminaram o trabalho?</span></li>
+      </ul>
+    </section>
+
+    <section class="panel" id="dicas">
+      <h2>6. Dicas rápidas</h2>
+      <ul>
+        <li>Use <code>do / does</code> no presente e <code>did</code> no passado como auxiliar.</li>
+        <li>Use <code>done</code> como particípio em tempos perfeitos.</li>
+        <li>Para perguntas e negativas, lembre-se de que o verbo principal volta ao infinitivo: <em>do/does/did + verbo</em>.</li>
+      </ul>
+    </section>
+
+    <section class="panel" id="exercicios">
+      <h2>7. Exemplos práticos</h2>
+      <ul>
+        <li><strong>Completar:</strong> <em>He ____ (to do) his homework every day.</em> → <code>He does his homework every day.</code></li>
+        <li><strong>Transforme em pergunta:</strong> <em>You do the work.</em> → <code>Do you do the work?</code></li>
+        <li><strong>Negativa:</strong> <em>They do the exercises.</em> → <code>They do not do the exercises.</code></li>
+      </ul>
+    </section>
+
+  </main>
+</body>
+</html>

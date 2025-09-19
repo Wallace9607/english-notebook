@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<title>Números em Inglês — Interativo (com pronúncia)</title>
+<style>
+  :root{
+    --bg:#0f172a; --panel:#0b1220; --panel2:#111827; --text:#e5e7eb; --muted:#94a3b8;
+    --accent:#38bdf8; --accent2:#22d3ee; --ring:0 0 0 1px rgba(56,189,248,.2), 0 10px 30px -10px rgba(56,189,248,.25);
+  }
+  /* ==========================
+   NAVIGATION BAR LATERAL
+   ========================== */
+
+
+/* Nav lateral fixa */
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%;
+  width: 240px;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+}
+
+/* Logo */
+.nav-logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 24px;
+  display: block;
+  text-align: center;
+}
+.nav-logo:hover {
+  color: var(--accent2);
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(56,189,248,.08);
+  color: var(--accent2);
+}
+
+
+/* Responsivo: nav vira topo no mobile */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(148,163,184,.12);
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  body {
+    margin-left: 0;
+    margin-top: 70px; /* espaço para a nav no topo */
+  }
+}
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial;
+    color:var(--text);
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,.15), transparent 60%),
+      radial-gradient(1000px 600px at 90% 0%, rgba(34,211,238,.10), transparent 60%),
+      linear-gradient(180deg, var(--bg), #060b16 40%, #050a14 100%);
+    background-attachment:fixed; padding:32px 16px 80px;
+  }
+  .wrap{max-width:1000px;margin-left: 270px;}
+  header{text-align:center;margin-bottom:24px}
+  h1{margin:0;font-size:clamp(28px,5vw,42px);background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}
+  .subtitle{color:var(--muted);font-size:16px;max-width:65ch;margin:8px auto 0}
+
+  .toolbar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px auto}
+  .btn{background:#0ea5a4;border:0;color:#032;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+  .btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(148,163,184,.22)}
+
+  .grid{display:grid;grid-template-columns:1fr 330px;gap:16px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+  .panel{background:linear-gradient(180deg,var(--panel), rgba(15,23,42,.72)); border:1px solid rgba(148,163,184,.12); border-radius:14px; box-shadow:var(--ring); padding:16px}
+
+  .numbers{display:grid;grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:12px}
+  .number-card{background:linear-gradient(180deg, var(--panel2), rgba(15,23,42,.7)); border:1px solid rgba(148,163,184,.12); border-radius:12px; padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:transform .18s ease, box-shadow .18s ease}
+  .number-card:hover{transform:translateY(-3px); box-shadow:0 0 0 1px rgba(34,211,238,.30), 0 15px 35px -10px rgba(34,211,238,.40)}
+  .number-card span{font-size:26px;font-weight:800;color:var(--accent)}
+  .number-card small{color:var(--muted);margin-top:6px;text-align:center;font-size:14px}
+  .pron{margin-top:4px;color:#80e7ff;font-size:13px}
+  .card-actions{display:flex;gap:6px;margin-top:10px}
+  .chip{font-size:12px;border-radius:8px;padding:6px 8px;border:1px solid rgba(148,163,184,.2);background:transparent;color:var(--text);cursor:pointer}
+
+  /* Quiz */
+  .quiz h3{margin:8px 0 12px}
+  .quiz .q{font-size:18px;margin:0 0 8px;color:#c7d2fe}
+  .quiz input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(148,163,184,.22);background:#0c1426;color:var(--text)}
+  .quiz .row{display:flex;gap:8px;margin-top:8px}
+  .quiz .hint{color:var(--muted);font-size:13px;margin-top:6px}
+  .ok{color:#86efac}
+  .bad{color:#fca5a5}
+
+  footer{margin-top:16px;color:var(--muted);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">🏠 Home</a>
+    <div class="nav-links">
+      <a href="alphabet.html">Alphabet</a>
+      <a href="numbers.html">Numbers</a>
+      <a href="auxiliary-modals.html">Auxiliary & Modals</a>
+      <a href="year-division.html">Year Division</a>
+      <a href="prepositions.html">Prepositions</a>
+      <a href="verb.html">Verb</a>
+      <a href="very-much-many.html">Very / Much / Many</a>
+      <a href="punctuation-accents.html">Punctuation & Accents</a>
+      <a href="social.html">Greetings</a>
+      <a href="dictionary.html">Dictionary</a>
+    </div>
+  </div>
+</nav>
+  <main class="wrap">
+    <header>
+      <h1>Números em Inglês</h1>
+      <p class="subtitle">Aprenda e pratique os números em inglês com pronúncia (pt-br aproximada), áudio e quiz.</p>
+      <div class="toolbar">
+        <button class="btn" id="togglePron">Alternar pronúncia</button>
+        <button class="btn secondary" id="shuffle">Embaralhar</button>
+        <button class="btn secondary" id="reset">Resetar</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="panel">
+        <div class="numbers" id="numbers"></div>
+      </section>
+
+      <aside class="panel quiz">
+        <h3>🧠 Quiz rápido</h3>
+        <p class="q" id="quizQ">Carregando pergunta…</p>
+        <input id="quizA" placeholder="Digite sua resposta aqui" autocomplete="off" />
+        <div class="row">
+          <button class="btn" id="check">Verificar</button>
+          <button class="btn secondary" id="skip">Pular</button>
+          <button class="btn secondary" id="speakQ">Ouvir</button>
+        </div>
+        <div class="hint" id="hint"></div>
+      </aside>
+    </div>
+
+    <footer>Use os botões de cada cartão para <strong>ouvir</strong> e <strong>copiar</strong>. A pronúncia é uma aproximação para ajudar a falar.</footer>
+  </main>
+
+<script>
+  // Dados com base na sua lista + pronúncia aproximada (pt-br)
+  const data = [
+    {n:0, w:'zero', p:'zírou'},
+    {n:1, w:'one', p:'uân'},
+    {n:2, w:'two', p:'tchú'},
+    {n:3, w:'three', p:'thri (língua entre os dentes)'},
+    {n:4, w:'four', p:'fór'},
+    {n:5, w:'five', p:'faiv'},
+    {n:6, w:'six', p:'sics'},
+    {n:7, w:'seven', p:'séven'},
+    {n:8, w:'eight', p:'êit'},
+    {n:9, w:'nine', p:'nain'},
+    {n:10, w:'ten', p:'tén'},
+    {n:11, w:'eleven', p:'iléven'},
+    {n:12, w:'twelve', p:'tchuélv'},
+    {n:13, w:'thirteen', p:'thârtín'},
+    {n:14, w:'fourteen', p:'fórtín'},
+    {n:15, w:'fifteen', p:'fiftín'},
+    {n:16, w:'sixteen', p:'sixtín'},
+    {n:17, w:'seventeen', p:'séventín'},
+    {n:18, w:'eighteen', p:'êitín'},
+    {n:19, w:'nineteen', p:'naintín'},
+    {n:20, w:'twenty', p:'tchuéni'},
+    {n:21, w:'twenty-one', p:'tchuéni-uân'},
+    {n:26, w:'twenty-six', p:'tchuéni-sics'},
+    {n:30, w:'thirty', p:'thârâri'},
+    {n:33, w:'thirty-three', p:'thârâri-thri'},
+    {n:35, w:'thirty-five', p:'thârâri-faiv'},
+    {n:40, w:'forty', p:'fórâri (sem "u")'},
+    {n:42, w:'forty-two', p:'fórâri-tchú'},
+    {n:47, w:'forty-seven', p:'fórâri-séven'},
+    {n:50, w:'fifty', p:'fífti'},
+    {n:54, w:'fifty-four', p:'fífti-fór'},
+    {n:59, w:'fifty-nine', p:'fífti-nain'},
+    {n:60, w:'sixty', p:'sícs-ti'},
+    {n:61, w:'sixty-one', p:'sícs-ti-uân'},
+    {n:68, w:'sixty-eight', p:'sícs-ti-êit'},
+    {n:70, w:'seventy', p:'séven-ti'},
+    {n:76, w:'seventy-six', p:'séven-ti-sics'},
+    {n:78, w:'seventy-eight', p:'séven-ti-êit'},
+    {n:80, w:'eighty', p:'êiri'},
+    {n:81, w:'eighty-one', p:'êiri-uân'},
+    {n:82, w:'eighty-two', p:'êiri-tchú'},
+    {n:90, w:'ninety', p:'nain-ti'},
+    {n:93, w:'ninety-three', p:'nain-ti-thri'},
+    {n:94, w:'ninety-four', p:'nain-ti-fór'},
+    {n:95, w:'ninety-five', p:'nain-ti-faiv'},
+    {n:100, w:'a/one hundred', p:'uân rândréd'},
+    {n:113, w:'a/one hundred (and) thirteen', p:'uân rândréd (ên) thârtín'},
+    {n:187, w:'a/one hundred (and) eighty-seven', p:'uân rândréd (ên) êiri-séven'},
+    {n:200, w:'two hundred', p:'tchú rândréd'},
+    {n:235, w:'two hundred (and) thirty-five', p:'tchú rândréd (ên) thârâri-faiv'},
+    {n:287, w:'two hundred (and) eighty-seven', p:'tchú rândréd (ên) êiri-séven'},
+    {n:300, w:'three hundred', p:'thri rândréd'},
+    {n:350, w:'three hundred (and) fifty', p:'thri rândréd (ên) fífti'},
+    {n:390, w:'three hundred (and) ninety', p:'thri rândréd (ên) nain-ti'},
+    {n:400, w:'four hundred', p:'fór rândréd'},
+    {n:403, w:'four hundred (and) three', p:'fór rândréd (ên) thri'},
+    {n:462, w:'four hundred (and) sixty-two', p:'fór rândréd (ên) sícs-ti-tchú'},
+    {n:500, w:'five hundred', p:'faiv rândréd'},
+    {n:515, w:'five hundred (and) fifteen', p:'faiv rândréd (ên) fiftín'},
+    {n:567, w:'five hundred (and) sixty-seven', p:'faiv rândréd (ên) sícs-ti-séven'},
+    {n:589, w:'five hundred (and) eighty-nine', p:'faiv rândréd (ên) êiri-nain'},
+    {n:600, w:'six hundred', p:'sics rândréd'},
+    {n:661, w:'six hundred (and) sixty-one', p:'sics rândréd (ên) sícs-ti-uân'},
+    {n:699, w:'six hundred (and) ninety-nine', p:'sics rândréd (ên) nain-ti-nain'},
+    {n:700, w:'seven hundred', p:'séven rândréd'},
+    {n:770, w:'seven hundred (and) seventy', p:'séven rândréd (ên) séven-ti'},
+    {n:773, w:'seven hundred (and) seventy-three', p:'séven rândréd (ên) séven-ti-thri'},
+    {n:800, w:'eight hundred', p:'êit rândréd'},
+    {n:820, w:'eight hundred (and) twenty', p:'êit rândréd (ên) tchuéni'},
+    {n:834, w:'eight hundred (and) thirty-four', p:'êit rândréd (ên) thârâri-fór'},
+    {n:900, w:'nine hundred', p:'nain rândréd'},
+    {n:935, w:'nine hundred (and) thirty-five', p:'nain rândréd (ên) thârâri-faiv'},
+    {n:988, w:'nine hundred (and) eighty-eight', p:'nain rândréd (ên) êiri-êit'},
+    {n:1000, w:'a/one thousand', p:'uân tháuzand'},
+    {n:1003, w:'a/one thousand (and) three', p:'uân tháuzand (ên) thri'},
+    {n:2000, w:'two thousand', p:'tchú tháuzand'},
+  ];
+
+  const container = document.getElementById('numbers');
+  const togglePron = document.getElementById('togglePron');
+  const shuffleBtn = document.getElementById('shuffle');
+  const resetBtn = document.getElementById('reset');
+
+  let showPron = true;
+  let current = [...data];
+
+  function render(){
+    container.innerHTML = '';
+    current.forEach(item => {
+      const card = document.createElement('div');
+      card.className='number-card';
+      card.innerHTML = `
+        <span>${item.n}</span>
+        <small>${item.w}</small>
+        <div class="pron" style="display:${showPron?'block':'none'}">${item.p}</div>
+        <div class="card-actions">
+          <button class="chip" onclick="speak('${escape(item.w)}')">Ouvir</button>
+        </div>`;
+      container.appendChild(card);
+    });
+  }
+
+  function escape(s){ return s.replace(/\\/g,'\\\\').replace(/'/g,"\\'"); }
+
+  function speak(text){
+    if('speechSynthesis' in window){
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-US';
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(u);
+    } else alert('TTS não disponível no seu navegador.');
+  }
+
+  function copyTxt(text){
+    navigator.clipboard?.writeText(text).then(()=>{
+      toast('Copiado: '+text);
+    }).catch(()=>{ prompt('Copy the text below:', text); });
+  }
+
+  function toast(msg){
+    const t = document.createElement('div');
+    t.textContent = msg;
+    t.style.position='fixed'; t.style.bottom='16px'; t.style.left='50%'; t.style.transform='translateX(-50%)';
+    t.style.background='rgba(0,0,0,.6)'; t.style.padding='10px 14px'; t.style.borderRadius='10px'; t.style.backdropFilter='blur(6px)';
+    t.style.border='1px solid rgba(148,163,184,.25)';
+    document.body.appendChild(t);
+    setTimeout(()=>{ t.remove(); }, 1600);
+  }
+
+  // Controls
+  togglePron.onclick = ()=>{ showPron = !showPron; render(); };
+  shuffleBtn.onclick = ()=>{ current = current.sort(()=>Math.random()-0.5); render(); };
+  resetBtn.onclick = ()=>{ current = [...data]; render(); window.scrollTo({top:0,behavior:'smooth'}); };
+
+  // QUIZ --------------------------------------------------
+  const qEl = document.getElementById('quizQ');
+  const aEl = document.getElementById('quizA');
+  const hintEl = document.getElementById('hint');
+  const checkBtn = document.getElementById('check');
+  const skipBtn = document.getElementById('skip');
+  const speakQBtn = document.getElementById('speakQ');
+
+  let quizItem = null; // {n,w,mode}
+
+  function newQuestion(){
+    quizItem = data[Math.floor(Math.random()*data.length)];
+    const mode = Math.random() < 0.5 ? 'n2w' : 'w2n';
+    quizItem.mode = mode;
+    aEl.value = '';
+    hintEl.textContent = '';
+    if(mode==='n2w'){ // número -> palavra
+      qEl.textContent = `Como se diz ${quizItem.n} em inglês?`;
+    } else { // palavra -> número
+      qEl.textContent = `Qual é o número de "${quizItem.w}"?`;
+    }
+    aEl.focus();
+  }
+
+  function checkAnswer(){
+    const ans = aEl.value.trim().toLowerCase();
+    if(quizItem.mode==='n2w'){
+      if(ans === quizItem.w.toLowerCase()){
+        hintEl.innerHTML = `<span class='ok'>✔ Correto!</span> ${quizItem.n} = ${quizItem.w}`;
+        newQuestion();
+      } else {
+        hintEl.innerHTML = `<span class='bad'>✖ Ainda não.</span> Dica: começa com <b>${quizItem.w[0]}</b>.`;
+      }
+    } else {
+      if(ans === String(quizItem.n)){
+        hintEl.innerHTML = `<span class='ok'>✔ Correto!</span> ${quizItem.w} = ${quizItem.n}`;
+        newQuestion();
+      } else {
+        hintEl.innerHTML = `<span class='bad'>✖ Ainda não.</span> Dica: tem <b>${String(quizItem.n).length}</b> dígitos.`;
+      }
+    }
+  }
+
+  checkBtn.onclick = checkAnswer;
+  aEl.addEventListener('keydown', (e)=>{ if(e.key==='Enter') checkAnswer(); });
+  skipBtn.onclick = newQuestion;
+  speakQBtn.onclick = ()=>{
+    if(quizItem){
+      const phrase = quizItem.mode==='n2w' ? String(quizItem.n) : quizItem.w;
+      speak(phrase);
+    }
+  };
+
+  // start
+  render();
+  newQuestion();
+</script>
+</body>
+</html>
