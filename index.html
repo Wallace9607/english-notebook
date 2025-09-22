@@ -57,7 +57,6 @@
       gap: 18px;
     }
     @media(min-width: 700px){
-       body{margin-top:50px;}
       .topics{ grid-template-columns: 1fr 1fr; }
     }
     a.topic{
@@ -85,6 +84,47 @@
       color: var(--muted);
       margin: 0;
     }
+    /* Ajustes para telas menores */
+@media (max-width: 600px) {
+  body {
+    margin: 0;           /* remove margem extra */
+    padding: 10px;       /* reduz espaçamento lateral */
+    align-items: flex-start; /* conteúdo mais para cima */
+    justify-content: flex-start;
+  }
+
+  main {
+    max-width: 100%;
+    text-align: left;    /* melhor leitura em celular */
+  }
+
+  h1 {
+    font-size: 24px;     /* título menor */
+    margin-bottom: 8px;
+  }
+
+  p.subtitle {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  .topics {
+    gap: 12px;           /* menos espaço entre os cards */
+  }
+
+  a.topic {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  a.topic h2 {
+    font-size: 18px;
+  }
+
+  a.topic p {
+    font-size: 13px;
+  }
+}
 
   </style>
 </head>
